@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login Page</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body class="container mt-4">
+
+        <h3 class="text-center mb-3">Login</h3>
+
+        <form id="loginForm" class="p-4 border rounded shadow-sm">
+
+            <div class="mb-3">
+                <label class="form-label" for="userName">UserName</label>
+                <input type="text" class="form-control" id="userName"/>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" for="password">Password</label>
+                <input type="password" class="form-control" id="password"/>
+            </div>
+
+            <div class="d-grid">
+                <button type="submit" class="btn btn-primary" id="submit">Submit</button>
+            </div>
+
+        </form>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+        <script>
+            const loginForm = document.getElementById("loginForm");
+            
+            loginForm.addEventListener("submit", function(event){
+                event.preventDefault();
+
+                let userName = document.getElementById("userName").value;
+                let password = document.getElementById("password").value;
+
+                let userNamePattern = /^[a-zA-Z0-9]{4,12}$/; 
+                let passwordPattern = /^[a-zA-Z0-9@!#$%^&*]{6,16}$/;
+
+                if(!userNamePattern.test(userName)){
+                    alert("Invalid UserName");
+                    return;
+                }
+                if(!passwordPattern.test(password)){
+                    alert("Invalid Password");
+                    return;
+                }
+                alert("Login successful");
+            });
+        </script>
+
+    </body>
+</html>

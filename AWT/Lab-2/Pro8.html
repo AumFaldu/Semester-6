@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Key Press</title>
+</head>
+<body>
+    <h1 id="res">Press any key</h1>
+
+    <script>
+        let res = document.getElementById("res");
+        let vowels = "aeiouAEIOU";
+
+        document.addEventListener("keypress", (e) => {
+            
+            if (vowels.includes(e.key)) {
+                alert("Vowel is pressed");
+            }
+
+            res.innerHTML = `Key Pressed = ${e.key}`;
+        });
+
+        document.addEventListener("keyup", () => {
+            document.body.style.backgroundColor = "red";
+        });
+    </script>
+</body>
+</html>

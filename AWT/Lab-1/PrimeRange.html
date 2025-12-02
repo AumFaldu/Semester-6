@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>Range of Prime Numbers</title>
+    </head>
+    <body>
+    <script>
+        let low = prompt("Enter low number : ")
+        let high = prompt("Enter high number : ")
+        let arr=[]
+        for(let i=low;i<=high;i++){
+            let isPrime=true
+            for(let j=2;j<i;j++){
+                if(i%j==0){
+                    isPrime=false
+                    break
+                }
+            }
+            if(isPrime) arr.push(i)
+        }
+    document.write(`The prime numbers in the range ${low} to ${high} are:`+arr)
+    </script>
+    </body>
+</html>

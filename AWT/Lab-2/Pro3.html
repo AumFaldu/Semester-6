@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Keyboard event</title>
+</head>
+<body>
+    <input type="text" id="inputBox" />
+    <h1 id="res">Event Fired:</h1>
+    <script>
+        let res = document.getElementById("res")
+        let box = document.getElementById("inputBox")
+        box.addEventListener("keyup",()=>res.innerText="Key Up Event Fired")
+        box.addEventListener("keypress",()=>res.innerText="Key Press Event Fired")
+        box.addEventListener("keydown",()=>res.innerText="Key Down Event Fired")
+    </script>
+</body>
+</html>

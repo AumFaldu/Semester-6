@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Event</title>
+</head>
+<body>
+    <form id="form">
+        <div>
+        <label for="userName">UserName:</label>
+        <input type="text" id="userName"/>
+        </div>
+        <div>
+        <label for="password">Password:</label>
+        <input type="password" id="password"/>
+        </div>
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+    </form>
+    <h1 id="res">Event Fired</h1>
+    <script>
+        let form=document.getElementById("form")
+        form.addEventListener("submit",(e)=>{
+            e.preventDefault();
+            res.innerText="Submit Event fired";
+        })
+        form.addEventListener("reset",()=>{res.innerText="Reset Event fired"})
+        form.addEventListener("change",()=>{res.innerText="Change Event fired"})
+        form.addEventListener("focus",()=>{res.innerText="Focus Event fired"},true)
+        form.addEventListener("blur",()=>{res.innerText="Blur Event fired"},true)
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Mouse Event</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+    <div id="box" style="width:300px;height:200px;background-color: red;">Perform any mouse event</div>
+    <h1 id="res">Event Fired:</h1>
+    <script>
+        let box = document.getElementById("box")
+        let res = document.getElementById("res")
+        box.addEventListener("click",()=>res.innerText="Click event Fired")
+        box.addEventListener("dblclick",()=>res.innerText="Double Click event Fired")
+        box.addEventListener("mouseover",()=>res.innerText="Mouse Over event Fired")
+        box.addEventListener("mouseup",()=>res.innerText="Mouse Up event Fired")
+        box.addEventListener("mousedown",()=>res.innerText="Mouse Down event Fired")
+        box.addEventListener("mousemove",()=>res.innerText="Mouse Move event Fired")
+    </script>
+</body>
+</html>

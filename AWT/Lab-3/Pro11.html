@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkbox</title>
+</head>
+<body>
+    <div id="rollNo">
+        <ul role="checkbox" style="list-style: none;">
+            <li><input type="checkbox" id="one" onClick="check()"/>101</li>
+            <li><input type="checkbox" id="two"  onClick="check()"/>102</li>
+            <li><input type="checkbox" id="three" onClick="check()"/>103</li>
+            <li><input type="checkbox" id="four" onClick="check()"/>104</li>
+            <li><input type="checkbox" id="five" onClick="check()"/>105</li>
+            <li><input type="checkbox" id="six" onClick="check()"/>106</li>
+            <li><input type="checkbox" id="seven" onClick="check()"/>107</li>
+            <li><input type="checkbox" id="eight" onClick="check()"/>108</li>
+            <li><input type="checkbox" id="nine" onClick="check()"/>109</li>
+            <li><input type="checkbox" id="ten" onClick="check()"/>110</li>
+        </ul>
+    </div>
+    <div>
+        <h1>Selected Roll No.</h1>
+        <p id="para">Not Selected</p>
+    </div>
+    <script>
+        function check(){
+            var arr = []
+            if(document.getElementById('one').checked) arr.push(101)
+            if(document.getElementById('two').checked) arr.push(102)
+            if(document.getElementById('three').checked) arr.push(103)
+            if(document.getElementById('four').checked) arr.push(104)
+            if(document.getElementById('five').checked) arr.push(105)
+            if(document.getElementById('six').checked) arr.push(106)
+            if(document.getElementById('seven').checked) arr.push(107)
+            if(document.getElementById('eight').checked) arr.push(108)
+            if(document.getElementById('nine').checked) arr.push(109)
+            if(document.getElementById('ten').checked) arr.push(110)
+            if(arr.length==0){
+                document.getElementById('para').innerHTML='Not Selected'
+            }
+            document.getElementById('para').innerHTML = arr
+        }
+    </script>
+</body>
+</html>

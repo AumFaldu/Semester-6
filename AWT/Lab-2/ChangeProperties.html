@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Properties</title>
+</head>
+<body>
+    <div id="box" style="background-color: red; height:500px;width:500px;"></div>
+    <button id="increase" onclick="increase()">Increase</button>
+    <button id="decrease" onclick="decrease()">Decrease</button>
+    <script>
+        var box=document.getElementById("box")
+        function increase(){
+            let h = parseInt(box.style.height)
+            let w = parseInt(box.style.width)
+            box.style.height=(h+100)+"px"
+            box.style.width=(w+100)+"px"
+        }
+        function decrease(){
+            let h = parseInt(box.style.height)
+            let w = parseInt(box.style.width)
+            if(h<=100 || w<=100){
+                alert("Cannot reduce further")
+                return;
+            }
+            box.style.height=(h-100)+"px"
+            box.style.width=(w-100)+"px"
+        }
+    </script>
+</body>
+</html>

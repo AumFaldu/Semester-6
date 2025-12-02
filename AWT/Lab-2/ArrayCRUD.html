@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array CRUD</title>
+</head>
+<body>
+    <table id="table" border="1" cellpadding="10">
+        <tr>
+            <th>Value</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </table>
+    <button id="add" onclick="handleAdd()">Add</button>
+
+    <script>
+        let arr=[]
+        function handleDisplay(){
+            let table=document.getElementById("table")
+            table.innerHTML = `
+                <tr>
+                    <th>Value</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            `;
+            arr.forEach((value,index)=>{
+                table.innerHTML+=`
+                <tr>
+                <td>${value}</td>
+                <td><button onclick="handleUpdate(${index})">Edit</button></td>
+                <td><button onclick="handleDelete(${index})">Delete</button></td>
+                </tr>
+                `
+            })
+        }
+        handleDisplay()
+        function handleAdd(){
+            let data = prompt("Enter data")
+            arr.push(data)
+            handleDisplay()
+        }
+        function handleUpdate(id){
+            let data = prompt("Enter data")
+            arr[id]=data
+            handleDisplay()
+        }
+        function handleDelete(id){
+            if(confirm("Are you sure you want to delete?")){
+                arr.splice(id,1)
+            }
+            handleDisplay()
+        }
+    </script>
+</body>
+</html>

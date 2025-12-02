@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Array and Object Destructuring</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+    <script>
+        let arr = [1,2,3,4,5,6]
+        let [a,b,c] = arr
+        console.log("a =",a)
+        console.log("b =",b)
+        console.log("c =",c)
+        let [d,e,...rest] = arr
+        console.log("d =",d)
+        console.log("e =",e)
+        console.log("rest =",rest)
+        const person = {
+            firstName:"Arjun",
+            lastName:"Bala"
+        }
+        let {firstName,lastName} = person
+        console.log("First Name =",firstName)
+        console.log("Last Name =",lastName)
+    </script>
+</body>
+</html>
